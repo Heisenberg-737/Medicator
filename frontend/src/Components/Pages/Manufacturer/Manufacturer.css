@@ -1,0 +1,20 @@
+.manufacturer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 90px 0px 0px 0px;
+  padding: 30px;
+  flex-direction: column;
+  /* height: 100vh; */
+}
+
+.manufacturer h1 {
+  text-align: center;
+  width: 100%;
+  font-size: 4rem;
+}
+
+.manufacturer p {
+  margin: 30px;
+  font-size: 2rem;
+}

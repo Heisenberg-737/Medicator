@@ -1,0 +1,19 @@
+.create_record {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 90px 0px 0px 0px;
+}
+.create_record .create_record_content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 5px 10px 5px 10px;
+}
+.create_record h1 {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+}

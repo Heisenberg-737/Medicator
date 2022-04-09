@@ -1,0 +1,105 @@
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 90px 80px 40px 80px;
+  /* border: 1px solid black; */
+  border-radius: 30px;
+  height: 550px;
+  box-shadow: 0px 0px 2px 2px #12121210;
+}
+.signup__left {
+  flex: 0.3;
+  background: #0cb097;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px 0px 0px 20px;
+  padding: 10px 50px 10px 50px;
+  text-align: center;
+  color: white;
+}
+.signup__left h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.signup__left p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+.signup__left button {
+  background: transparent;
+  outline: none;
+  border: 2px solid #ffffff;
+  padding: 10px;
+  border-radius: 20px;
+  width: 60%;
+  color: #ffffff;
+}
+.signup__right {
+  flex: 0.7;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  color: #ffffff;
+}
+.signup__user__company {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 300px;
+}
+.signup__user {
+  padding: 10px;
+  width: 110px;
+  text-align: center;
+}
+.signup__company {
+  padding: 10px;
+  width: 110px;
+  text-align: center;
+}
+.signup__right h1 {
+  color: #0cb097;
+  font-size: 4rem;
+  font-weight: 800;
+  word-spacing: 3px;
+}
+.signup__right p {
+  color: #12121270;
+  font-weight: 800;
+}
+.signup__right form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.signup__right form input {
+  padding: 15px;
+  width: 400px;
+  border-radius: 15px;
+  margin: 10px;
+  outline: none;
+  border: none;
+  background: #0cb09710;
+  color: #00000070;
+}
+.signup__right form button {
+  background: #0cb097;
+  outline: none;
+  border: 2px solid #ffffff;
+  padding: 18px;
+  border-radius: 50px;
+  width: 60%;
+  margin-top: 30px;
+}

@@ -1,0 +1,26 @@
+.Record_Block {
+  width: 280px;
+  height: 250px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0px 0px 3px 0px #12121270;
+  border-radius: 10px;
+}
+.Record_Block form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.Record_Block form input {
+  padding: 5px 10px 5px 10px;
+  width: 180px;
+  margin: 3px;
+  outline: none;
+  border: 1px solid #12121250;
+  border-radius: 5px;
+}

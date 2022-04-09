@@ -1,0 +1,14 @@
+.history {
+  margin: 90px 30px 100px 30px;
+  padding: 15px;
+  /* box-shadow: 0px 0px 1px 0px #12121280; */
+  height: max-content;
+}
+.history__manufacturer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 30px;
+  padding: 10px;
+}
