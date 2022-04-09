@@ -1,1 +1,1 @@
-# Vaccinometer
+# Medicater
