@@ -1,1 +1,1 @@
-# Medicater
+# Medicator
