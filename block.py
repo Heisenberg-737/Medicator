@@ -1,7 +1,7 @@
 import json
 from web3 import Web3
 
-ganache_url = "HTTP://127.0.0.1:8545"
+ganache_url = "http://127.0.0.1:8545"
 web3 = Web3(Web3.HTTPProvider(ganache_url))
 
 abi = json.loads('[ { "constant": false, "inputs": [ { "internalType": "address", "name": "_id", "type": "address" }, { "internalType": "string", "name": "_name", "type": "string" } ], "name": "addCenter", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "internalType": "address", "name": "_companyAdd", "type": "address" }, { "internalType": "uint256", "name": "_id", "type": "uint256" }, { "internalType": "string", "name": "_name", "type": "string" }, { "internalType": "string", "name": "_mfgDate", "type": "string" }, { "internalType": "string", "name": "_expiry", "type": "string" } ], "name": "addmed", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "internalType": "uint256", "name": "_id", "type": "uint256" }, { "internalType": "address", "name": "_medCenterId", "type": "address" } ], "name": "addmedToCenter", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "internalType": "address", "name": "_id", "type": "address" } ], "name": "getMedCenterInfo", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "internalType": "uint256", "name": "_id", "type": "uint256" } ], "name": "getmedInfo", "outputs": [ { "internalType": "address", "name": "", "type": "address" }, { "internalType": "string", "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" } ]')
@@ -12,6 +12,7 @@ bytecode = "608060405234801561001057600080fd5b50610d2d806100206000396000f3fe6080
 Medd = web3.eth.contract(abi=abi, bytecode=bytecode)
 
 web3.eth.defaultAccount = web3.eth.accounts[0]
+print(web3.eth.defaultAccount)
 
 tx1_hash = Medd.constructor().transact()
 tx_receipt = web3.eth.waitForTransactionReceipt(tx1_hash)
@@ -20,27 +21,17 @@ contract = web3.eth.contract(address=tx_receipt.contractAddress, abi=abi)
 
 
 def addmedicine(companyAdd, private_key, medicineId, medicineName, mfgDate, expiry):
-    nonce = web3.eth.getTransactionCount(companyAdd)
-    txn = contract.functions.addmed(web3.toChecksumAddress(companyAdd), medicineId, medicineName, mfgDate, expiry).buildTransaction({
-        'chainId': 1,
-        'gas': 700000,
-        'gasPrice': web3.toWei('1', 'gwei'),
-        'nonce': nonce
-    })
-    signed_txn=web3.eth.account.sign_transaction(txn, private_key=private_key)
-    web3.eth.sendRawTransaction(signed_txn.rawTransaction)
+    # nonce = web3.eth.getTransactionCount(companyAdd)
+    txn = contract.functions.addmed(web3.toChecksumAddress(companyAdd), medicineId, medicineName, mfgDate, expiry).call()
+    return txn
 
 def addCenter(medCenterId, name, private_key):
-    nonce=web3.eth.getTransactionCount(medCenterId)
+    # nonce=web3.eth.getTransactionCount(medCenterId)
 
-    txn=contract.functions.addCenter(web3.toChecksumAddress(medCenterId), name).buildTransaction({
-        'chainId': 1,
-        'gas': 700000,
-        'gasPrice': web3.toWei('1', 'gwei'),
-        'nonce': nonce
-    })
-    signed_txn=web3.eth.account.sign_transaction(txn, private_key=private_key)
-    web3.eth.sendRawTransaction(signed_txn.rawTransaction)
+    txn=contract.functions.addCenter(web3.toChecksumAddress(medCenterId), name).call()
+    # signed_txn=web3.eth.account.sign_transaction(txn, private_key=private_key)
+    # web3.eth.sendRawTransaction(signed_txn.rawTransaction)
+    return txn
 
 def addmedicineToCenter(medicineId, medCenterId, private_key):
 

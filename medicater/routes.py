@@ -143,7 +143,7 @@ def vacCreate():
 
     product_id = random.randint(1000000, 9999999)
 
-    addmedicine(address, private_key, product_id, name, str(date), str(expiry))
+    txn = addmedicine(address, private_key, product_id, name, str(date), str(expiry))
     product_id = str(product_id)
 
     List = []
@@ -190,7 +190,7 @@ def retailer():
     name = user.name
     address = user.address
 
-    addCenter(address, name, private_key)
+    txn = addCenter(address, name, private_key)
 
     return "Medicice Added", 200
 
@@ -254,6 +254,7 @@ def public_info():
     Dict = {}
 
     for row in rows:
+        if(row.scanned=="True"):
             user = User.query.filter(User.uid == row.uid).first()
             Dict = {
                 'name': user.name,

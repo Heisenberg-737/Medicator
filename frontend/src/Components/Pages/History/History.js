@@ -40,11 +40,21 @@ export const History = () => {
               })}
             </div>
             <div>
-              <h3>Vaccine Name</h3>
+              <h3>Medicine Name</h3>
               {details.map((detail, index) => {
                 return (
                   <p key={index} style={{ textAlign: "center" }}>
                     {detail.name}
+                  </p>
+                );
+              })}
+            </div>
+            <div>
+              <h3>Product ID</h3>
+              {details.map((detail, index) => {
+                return (
+                  <p key={index} style={{ textAlign: "center" }}>
+                    {detail.product_id}
                   </p>
                 );
               })}
