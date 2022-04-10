@@ -1,6 +1,6 @@
 import json
 from flask import request, jsonify, g
-from medicater.models import User, Vaccine, Info, db
+from medicater.models import User, Medicine, Info, db
 from medicater import app
 import datetime
 from datetime import timedelta
@@ -113,6 +113,7 @@ def save_profile_manufacturer():
 @app.route('/backend/saveprofilehosp', methods=["POST", "GET"])
 def save_profile_hospital():
     content = request.get_json()
+    print(content)
     uid = content["uid"]
     name = content["name"]
     role = "Hospital"
@@ -149,8 +150,8 @@ def vacCreate():
     Dict = {'product_id': product_id}
     List.append(Dict)
 
-    vacc = Vaccine(product_id=product_id, name=name,mrp=mrp, date=date, expiry=expiry)
-    db.session.add(vacc)
+    medd = Medicine(product_id=product_id, name=name,mrp=mrp, date=date, expiry=expiry)
+    db.session.add(medd)
     db.session.commit()
 
     ret = Info(uid=uid, product_id=product_id, date=date,scanned="False")
@@ -191,7 +192,7 @@ def retailer():
 
     addCenter(address, name, private_key)
 
-    return "Vaccine Added", 200
+    return "Medicice Added", 200
 
 
 @app.route('/backend/history', methods=["GET", "POST"])
@@ -207,8 +208,8 @@ def history():
 
     for user in users:
         if(type=="manufacturer" and user.scanned=="False"):
-            row = Vaccine.query.filter(
-                Vaccine.product_id == user.product_id).first()
+            row = Medicine.query.filter(
+                Medicine.product_id == user.product_id).first()
             
             if row!=None:
                 Dict = {
@@ -223,8 +224,8 @@ def history():
                 List.append(Dict)
     for user in users:
         if(type=="hospital" and user.scanned=="True"):
-            row = Vaccine.query.filter(
-                Vaccine.product_id == user.product_id).first()
+            row = Medicine.query.filter(
+                Medicine.product_id == user.product_id).first()
             
             if row!=None:
                 Dict = {
@@ -253,12 +254,12 @@ def public_info():
     Dict = {}
 
     for row in rows:
-        if(row.scanned=="True"):
             user = User.query.filter(User.uid == row.uid).first()
             Dict = {
                 'name': user.name,
                 'product_id': row.product_id,
                 'date': row.date,
+                'role': user.role
             }
             List.append(Dict)
 

@@ -54,13 +54,13 @@ export const Header = () => {
               ? "/manufacturer"
               : route.includes("/hospital")
               ? "/hospital"
-              : route.includes("/know_your_vaccine")
+              : route.includes("/know_your_medicine")
               ? "/"
               : "/"
           }
           style={{ color: "inherit", textDecoration: "none" }}
         >
-          VACCINOMETER
+          MEDICATOR
         </Link>
       </h1>
       <div className="header__right">

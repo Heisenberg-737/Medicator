@@ -53,7 +53,7 @@ export const Record_Block = (props) => {
       {props.type === "add" && addRecord && (
         <form onSubmit={submitForm}>
           <input
-            placeholder="VACCINE NAME"
+            placeholder="MEDICINE NAME"
             name="vaccine_name"
             value={recordDetails.vaccine_name}
             onChange={onInputChange}

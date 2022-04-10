@@ -11,13 +11,13 @@ export const Home = () => {
     <>
       <Header />
       <div className="home">
-        <img src={Vaccine} alt="VaccineImage" />
+        <img src={Vaccine} alt="MedicineImage" />
         <div className="home__left">
           <h1>
             Welcome to
-            <br /> <span style={{ color: "#0cb097" }}>VACCINOMETER</span>
+            <br /> <span style={{ color: "#0cb097" }}>MEDICATOR</span>
           </h1>
-          <p>Blockchain Based Vaccine Tracking Application</p>
+          <p>Blockchain Based Medicine Authentication Application</p>
           <button
             onMouseEnter={() => setMouseHover(true)}
             onMouseLeave={() => setMouseHover(false)}
@@ -27,7 +27,7 @@ export const Home = () => {
             }}
             onClick={() => history.push("/know_your_vaccine")}
           >
-            KNOW YOUR VACCINE
+            KNOW YOUR MEDICINE
           </button>
         </div>
       </div>

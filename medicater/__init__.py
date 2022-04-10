@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 app = Flask(__name__, static_folder="build", static_url_path='/')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///UsersDataBase.db'
-app.config['SQLALCHEMY_BINDS'] = {'vac': 'sqlite:///MedicineDataBase.db'}
+app.config['SQLALCHEMY_BINDS'] = {'med': 'sqlite:///MedicineDataBase.db'}
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)

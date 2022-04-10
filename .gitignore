@@ -11,6 +11,8 @@
 # production
 /build
 env
+__pycache__
+/medicater/__pycache__
 
 # misc
 .DS_Store

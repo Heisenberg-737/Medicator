@@ -39,7 +39,7 @@ export const Know_Your_Vaccine = () => {
     <>
       <Header />
       <div className="know_your_vaccine">
-        <h1>Know Your Vaccine</h1>
+        <h1>Know Your Medicine</h1>
         <div className="know_your_vaccine__content">
           <div className="know_your_vaccine__left">
             <h1>Enter Product ID</h1>
@@ -102,6 +102,21 @@ export const Know_Your_Vaccine = () => {
                       width: "280px",
                     }}
                   >
+                  <div
+                      style={{
+                        padding: "3px 5px 3px 15px",
+                        margin: "2px 5px 2px 5px",
+                        width: "100%",
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                        flexDirection: "row",
+                      }}
+                    >
+                      <strong style={{ width: "30%" }}>Role</strong>
+                      <p style={{ width: "10%" }}>:</p>
+                      {data.role}
+                    </div>
                     <div
                       style={{
                         padding: "3px 5px 3px 15px",

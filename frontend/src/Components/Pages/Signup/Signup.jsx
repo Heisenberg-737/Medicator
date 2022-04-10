@@ -113,7 +113,7 @@ export const Signup = () => {
               }}
               onClick={() => setIsManufacturer(false)}
             >
-              Hospital
+              Retailer
             </div>
           </div>
           {signupError && showError()}

@@ -18,7 +18,7 @@ export const Hospital = () => {
       <Header />
       <div className="hospital">
         <h1>Welcome {name}</h1>
-        <p>Hospital</p>
+        <p>Retailer</p>
       </div>
     </>
   );

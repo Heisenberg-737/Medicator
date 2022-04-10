@@ -95,7 +95,7 @@ export const Login = () => {
               }}
               onClick={() => setIsManufacturer(false)}
             >
-              Hospital
+              Retailer
             </div>
           </div>
           {loginError && showError()}
