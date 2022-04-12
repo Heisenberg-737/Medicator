@@ -43,7 +43,7 @@ def catch_createrecord():
     return app.send_static_file('index.html')
 
 
-@app.route('/hospital/scan_medicine', methods=["GET", "POST"])
+@app.route('/hospital/scan_vaccine', methods=["GET", "POST"])
 def catch_scanvaccine():
     return app.send_static_file('index.html')
 
@@ -53,7 +53,7 @@ def catch_history():
     return app.send_static_file('index.html')
 
 
-@app.route('/know_your_medicine', methods=["GET", "POST"])
+@app.route('/know_your_vaccine', methods=["GET", "POST"])
 def catch_knowvaccine():
     return app.send_static_file('index.html')
 
@@ -254,7 +254,7 @@ def public_info():
     Dict = {}
 
     for row in rows:
-        if(row.scanned=="True"):
+        # if(row.scanned=="True"):
             user = User.query.filter(User.uid == row.uid).first()
             Dict = {
                 'name': user.name,

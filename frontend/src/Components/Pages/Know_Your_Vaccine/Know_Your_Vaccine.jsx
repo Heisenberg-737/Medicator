@@ -162,7 +162,7 @@ export const Know_Your_Vaccine = () => {
                       <p style={{ width: "10%" }}>:</p>
                       {data.date.split(" ")[0]}
                     </div>
-                    <div
+                    {data.date.split(" ")[1] && <div
                       style={{
                         padding: "3px 5px 3px 15px",
                         margin: "2px 5px 2px 5px",
@@ -176,8 +176,8 @@ export const Know_Your_Vaccine = () => {
                       <strong style={{ width: "30%" }}>Time</strong>
                       <p style={{ width: "10%" }}>:</p>
                       {data.date.split(" ")[1]}
-                    </div>
-                    <div
+                    </div>}
+                    {data.date.split(" ")[2] && <div
                       style={{
                         padding: "3px 5px 3px 15px",
                         margin: "2px 5px 2px 5px",
@@ -191,8 +191,8 @@ export const Know_Your_Vaccine = () => {
                       <strong style={{ width: "30%" }}>City</strong>
                       <p style={{ width: "10%" }}>:</p>
                       {data.date.split(" ")[2]}
-                    </div>
-                    <div
+                    </div>}
+                    {data.date.split(" ")[3] && <div
                       style={{
                         padding: "3px 5px 3px 15px",
                         margin: "2px 5px 2px 5px",
@@ -206,8 +206,8 @@ export const Know_Your_Vaccine = () => {
                       <strong style={{ width: "30%" }}>Region</strong>
                       <p style={{ width: "10%" }}>:</p>
                       {data.date.split(" ")[3]}
-                    </div>
-                    <div
+                    </div>}
+                    {data.date.split(" ")[4] && <div
                       style={{
                         padding: "3px 5px 3px 15px",
                         margin: "2px 5px 2px 5px",
@@ -221,8 +221,8 @@ export const Know_Your_Vaccine = () => {
                       <strong style={{ width: "30%" }}>Country</strong>
                       <p style={{ width: "10%" }}>:</p>
                       {data.date.split(" ")[4]}
-                    </div>
-                    <div
+                    </div>}
+                    {data.date.split(" ")[5] && <div
                       style={{
                         padding: "3px 5px 3px 15px",
                         margin: "2px 5px 2px 5px",
@@ -236,7 +236,7 @@ export const Know_Your_Vaccine = () => {
                       <strong style={{ width: "30%" }}>Location</strong>
                       <p style={{ width: "10%" }}>:</p>
                       {data.date.split(" ")[5]}
-                    </div>
+                    </div>}
                   </div>
                 );
               })

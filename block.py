@@ -12,7 +12,6 @@ bytecode = "608060405234801561001057600080fd5b50610d2d806100206000396000f3fe6080
 Medd = web3.eth.contract(abi=abi, bytecode=bytecode)
 
 web3.eth.defaultAccount = web3.eth.accounts[0]
-print(web3.eth.defaultAccount)
 
 tx1_hash = Medd.constructor().transact()
 tx_receipt = web3.eth.waitForTransactionReceipt(tx1_hash)
@@ -22,16 +21,16 @@ contract = web3.eth.contract(address=tx_receipt.contractAddress, abi=abi)
 
 def addmedicine(companyAdd, private_key, medicineId, medicineName, mfgDate, expiry):
     # nonce = web3.eth.getTransactionCount(companyAdd)
-    txn = contract.functions.addmed(web3.toChecksumAddress(companyAdd), medicineId, medicineName, mfgDate, expiry).call()
-    return txn
+    tx_hash = contract.functions.addmed(web3.toChecksumAddress(companyAdd), medicineId, medicineName, mfgDate, expiry).call()
+    return tx_hash
 
 def addCenter(medCenterId, name, private_key):
     # nonce=web3.eth.getTransactionCount(medCenterId)
 
-    txn=contract.functions.addCenter(web3.toChecksumAddress(medCenterId), name).call()
+    tx_hash=contract.functions.addCenter(web3.toChecksumAddress(medCenterId), name).call()
     # signed_txn=web3.eth.account.sign_transaction(txn, private_key=private_key)
     # web3.eth.sendRawTransaction(signed_txn.rawTransaction)
-    return txn
+    return tx_hash
 
 def addmedicineToCenter(medicineId, medCenterId, private_key):
 
