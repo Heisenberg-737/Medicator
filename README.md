@@ -1,6 +1,7 @@
 # MediCator
-
 Blockchain based pharmaceuticals tracking application.
+
+![Screenshot (381)](https://user-images.githubusercontent.com/55024919/164076342-adbdcba0-31f5-4e53-870e-8a28179aec2e.png)
 
 ## Problem It Solves 🎯
 
@@ -17,15 +18,15 @@ So we developed an authentication platform for the pharmaceuticals industry, to 
 
 Our Blockchain application caters to three types of users- the Manufacturers, the Retailers, and the Public. It has signup and login options for retailer and manufacturers whereas the general public can use it without any signing up. Following are the steps and functionalities for each type of user-
 
-### Manufacturers
+#### Manufacturers
 
 The manufacturer can introduce /create new product shipments into the blockchain and create a QR code of the medicine Id, which is then attached to the batch of medicine to be shipped. This QR code is then scanned by the retailers and consumers to check the medicine's authenticity.
 
-### Retailer/Hospitals
+#### Retailer/Hospitals
 
 The retailer/hospital will scan the medicine using the QR code scanner on our web or the mobile application and his details like name, date and location will automatically be updated on the blockchain.
 
-### General Public
+#### General Public
 
 The consumer will scan the QR code and get the name of the medicine, it's MRP along with its the manufacture and expiry date. He/she will get the record of all the retailers' locations it has been through. This same interface can be used to determine where the chain has been broken in case of issues such as theft/ counterfeiting of drugs and the responsible party can be easily apprehended. 
 
