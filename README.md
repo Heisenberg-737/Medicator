@@ -11,7 +11,6 @@ Blockchain based pharmaceuticals tracking application.
 However, in 2017 a similar survey found 3.16% of the medicines sampled were substandard and 0.0245% were fake.
 
 So, in our country, even if we spend huge sums of money on buying healthcare products to alleviate our sufferings, we can’t be sure whether the product is genuine or not.
-
 So we developed an authentication platform for the pharmaceuticals industry, to ensure that counterfeited health products don't make it to the end user.
 
 ## Solution ⌛
